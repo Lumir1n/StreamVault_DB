@@ -1,0 +1,18 @@
+# Environment
+.env
+.env.local
+*.env
+
+# Credentials
+secrets.sql
+credentials.sql
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
