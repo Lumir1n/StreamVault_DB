@@ -79,7 +79,9 @@ CREATE TABLE public.user_bans (
     id          UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id     UUID         NOT NULL UNIQUE REFERENCES public.profiles(id) ON DELETE CASCADE,
     reason      TEXT         NOT NULL,
+    banned_by   UUID         REFERENCES auth.users(id) ON DELETE SET NULL,  -- Admin who issued the ban
     is_active   BOOLEAN      NOT NULL DEFAULT TRUE,
+    expires_at  TIMESTAMPTZ,            -- NULL = permanent ban
     created_at  TIMESTAMPTZ  NOT NULL DEFAULT NOW()
 );
 

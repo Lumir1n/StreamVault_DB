@@ -1,0 +1,20 @@
+-- ============================================================
+-- Migration: V003__add_stored_functions
+-- Description: RPC functions for atomic operations
+-- Applied: 2026-01-20
+-- Author: Miroslav Gilevich
+--
+-- Functions added:
+--   - increment_track_play_count   (atomic upsert)
+--   - increment_artist_play_count  (atomic upsert)
+--   - update_review_reputation     (SECURITY DEFINER — bypasses RLS)
+--   - get_or_create_synthesis_session
+--   - find_synthesis_session_by_code
+--   - find_existing_synthesis
+--   - get_or_create_synthesis_playlist
+--   - increment_playlist_likes
+--   - decrement_playlist_likes
+-- ============================================================
+
+-- See functions/ directory for full implementations.
+-- This migration documents the change event for audit purposes.

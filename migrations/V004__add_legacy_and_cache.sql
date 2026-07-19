@@ -1,0 +1,21 @@
+-- ============================================================
+-- Migration: V004__add_legacy_and_cache
+-- Description: Add legacy tables for historical compatibility
+--              and artist_profiles cache table
+-- Applied: 2026-02-01
+-- Author: Miroslav Gilevich
+--
+-- Changes:
+--   + public.users         (LEGACY — pre-Auth user table)
+--   + public.tracks        (LEGACY — pre-API track table)
+--   + public.ratings       (LEGACY — pre-UUID rating table)
+--   + public.artist_profiles (CACHE — external API artist data)
+--
+-- Notes:
+--   Legacy tables are retained for historical data integrity.
+--   New code should use profiles, track_ratings, custom_tracks.
+--   artist_profiles is a read-through cache — invalidate by cached_at.
+-- ============================================================
+
+-- See schema/00_legacy.sql and schema/10_artist_profiles.sql
+-- for full table definitions.
